@@ -1,0 +1,40 @@
+for node02
+^Cubuntu@ip-172-31-20-38:~/xcavate-protocol-oz-paseo./target/release/generic-template-node key generate --scheme Sr25519 --password-interactiveve
+Key password: 
+Secret phrase:       february eye interest intact coin tip assist giraffe shell public knock behave
+  Network ID:        substrate
+  Secret seed:       0x4e112802a8aecf113110a4008eda213f0829ef5988d40f63b1eb8c6b38bb4553
+  Public key (hex):  0xd41c1ead517306cf4a61f5bd6ab94919bef2317bfff7ec48043ec37babbd1343
+  Account ID:        0xd41c1ead517306cf4a61f5bd6ab94919bef2317bfff7ec48043ec37babbd1343
+  Public key (SS58): 5GrpMxCVGiaoH2sSznE2FMhx1bAuRcgA1mX2LsvFH5X1ttFR
+  SS58 Address:      5GrpMxCVGiaoH2sSznE2FMhx1bAuRcgA1mX2LsvFH5X1ttFR
+ubuntu@ip-172-31-20-38:~/xcavate-protocol-oz-paseo$  
+
+
+
+// insert in the node02
+./target/release/generic-template-node key insert --base-path ./tmp/node02 \
+  --chain raw-parachain-chainspec.json \
+  --scheme Sr25519 \
+  --suri "february eye interest intact coin tip assist giraffe shell public knock behave" \
+  --password-interactive \
+  --key-type aura
+
+// aura key for node01
+^Cubuntu@ip-172-31-20-38:~/xcavate-protocol-oz-paseo./target/release/generic-template-node key generate --scheme Sr25519 --password-interactiveve
+Key password: 
+Secret phrase:       chest sustain include drift nephew gloom grow cake please glance decade blanket
+  Network ID:        substrate
+  Secret seed:       0xecea604e65b9c932f6580f8e05eda6bbdba5b1704f8f03aa038b42247b9104dc
+  Public key (hex):  0x8e96ad620590743926dbac5152671afede28f9ade314aa649c8086efce351414
+  Account ID:        0x8e96ad620590743926dbac5152671afede28f9ade314aa649c8086efce351414
+  Public key (SS58): 5FHfRA1n9mMv8FBUMAp3BqN48RHSSBCSdbN4NAN9zQ3xLbDU
+  SS58 Address:      5FHfRA1n9mMv8FBUMAp3BqN48RHSSBCSdbN4NAN9zQ3xLbDU
+ubuntu@ip-172-31-20-38:~/xcavate-protocol-oz-paseo$ 
+
+ganesholi@Ganeshs-MacBook-Air xcavate-on-kilt-dip-consumer % ./target/release/generic-template-node key insert --base-path ./tmp/node01 \
+  --chain raw-parachain-chainspec.json \
+  --scheme Sr25519 \
+  --suri "chest sustain include drift nephew gloom grow cake please glance decade blanket" \
+  --password-interactive \
+  --key-type aura

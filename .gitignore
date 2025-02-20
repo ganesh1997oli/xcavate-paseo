@@ -1,0 +1,21 @@
+# Rust directories
+**/target
+
+# MacOS
+**/.DS_Store
+
+# Node
+**/node_modules
+
+# Code Editors / IDEs
+.vscode
+.idea
+
+# Binaries
+**/bin*/
+
+# zombienet stuff
+**/zombienet-macos-arm64
+**/zombienet-macos-x64
+**/zombienet-linux-arm64
+**/zombienet-linux-x64

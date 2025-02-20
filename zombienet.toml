@@ -1,0 +1,50 @@
+[relaychain]
+chain = "rococo-local"
+default_command = "./bin-stable-2709/polkadot"
+
+[[relaychain.nodes]]
+name = "alice"
+validator = true
+ws_port = 9900
+
+[[relaychain.nodes]]
+name = "bob"
+validator = true
+
+[[parachains]]
+id = 1000
+add_to_genesis = true
+cumulus_based = true
+chain = "asset-hub-rococo-local"
+
+  [[parachains.collators]]
+  name = "asset-hub-rococo-collator01"
+  command = "./bin-stable-2709/polkadot-parachain"
+  ws_port = 9910
+  args = ["-lxcm=trace,pallet-assets=trace"]
+
+  [[parachains.collators]]
+  name = "asset-hub-rococo-collator02"
+  command = "./bin-stable-2709/polkadot-parachain"
+  ws_port = 9911
+  args = ["--log=xcm=trace,pallet-assets=trace"]
+
+[[parachains]]
+id = 2000
+addToGenesis = true
+cumulus_based = true
+chain = "dev"
+
+[[parachains.collators]]
+name = "collator01"
+command = "./target/release/parachain-template-node"
+ws_port = 9920
+rpc_port = 8833
+args = ["-lxcm=trace,pallet-assets=trace"]
+
+[[parachains.collators]]
+name = "collator02"
+ws_port = 9921
+rpc_port = 8822
+command = "./target/release/parachain-template-node"
+args = ["-lxcm=trace,pallet-assets=trace"]
